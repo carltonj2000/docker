@@ -1,0 +1,59 @@
+version: "3"
+services:
+  home-root:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.home
+    ports:
+      - "80:80"
+    volumes:
+      - ${PWD}/nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - /mnt/volume_sfo2_02/cj/home-root:/usr/share/nginx/html
+  apps4tracking:
+    build:
+      context: ./apps4tracking
+      dockerfile: ${PWD}/apps4tracking/Dockerfile.home
+    ports:
+      - "8101:80"
+    volumes:
+      - /mnt/volume_sfo2_02/cj/apps4tracking:/usr/share/nginx/html
+  appsfortracking:
+    build:
+      context: ./appsfortracking
+      dockerfile: ${PWD}/appsfortracking/Dockerfile.home
+    ports:
+      - "8102:80"
+    volumes:
+      - /mnt/volume_sfo2_02/cj/appsfortracking:/usr/share/nginx/html
+  carltonathome:
+    build:
+      context: ./carltonathome
+      dockerfile: ${PWD}/carltonathome/Dockerfile.home
+    ports:
+      - "8103:80"
+    volumes:
+      - /mnt/volume_sfo2_02/cj/carltonathome:/usr/share/nginx/html
+  carltonjoseph:
+    build:
+      context: ./carltonjoseph
+      dockerfile: ${PWD}/carltonjoseph/Dockerfile.home
+    ports:
+      - "8104:80"
+    volumes:
+      - /mnt/volume_sfo2_02/cj/carltonjoseph:/usr/share/nginx/html
+  carltonwin8:
+    build:
+      context: ./carltonwin8
+      dockerfile: ${PWD}/carltonwin8/Dockerfile.home
+    ports:
+      - "8105:80"
+    volumes:
+      - /mnt/volume_sfo2_02/cj/carltonwin8:/usr/share/nginx/html
+  tinaandcarlton:
+    build:
+      context: ./tinaandcarlton
+      dockerfile: ${PWD}/tinaandcarlton/Dockerfile.home
+    ports:
+      - "8106:80"
+    volumes:
+      - /mnt/volume_sfo2_02/cj/tinaandcarlton:/usr/share/nginx/html
