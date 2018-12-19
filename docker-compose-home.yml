@@ -8,52 +8,38 @@ services:
       - "80:80"
     volumes:
       - ${PWD}/nginx.conf:/etc/nginx/conf.d/nginx.conf
-      - /mnt/volume_sfo2_02/cj/home-root:/usr/share/nginx/html
+      - ${DATA_DIR}/home-root:/usr/share/nginx/html
   apps4tracking:
-    build:
-      context: ./apps4tracking
-      dockerfile: ${PWD}/apps4tracking/Dockerfile.home
+    image: "node:10.14.2"
     ports:
-      - "8101:80"
+      - "8101:5000"
+    working_dir: /home/node/app
+    environment:
+      NODE_ENV: development
     volumes:
-      - /mnt/volume_sfo2_02/cj/apps4tracking:/usr/share/nginx/html
-  appsfortracking:
-    build:
-      context: ./appsfortracking
-      dockerfile: ${PWD}/appsfortracking/Dockerfile.home
-    ports:
-      - "8102:80"
-    volumes:
-      - /mnt/volume_sfo2_02/cj/appsfortracking:/usr/share/nginx/html
+      - ${DATA_DIR}/apps4tracking:/home/node/app
+    command: "sh -c 'cd server && npm install && cd .. && npm run server'"
   carltonathome:
-    build:
-      context: ./carltonathome
-      dockerfile: ${PWD}/carltonathome/Dockerfile.home
+    image: php:7.2.1-apache
     ports:
       - "8103:80"
     volumes:
-      - /mnt/volume_sfo2_02/cj/carltonathome:/usr/share/nginx/html
+      - ${DATA_DIR}/carltonathome:/var/www/html
   carltonjoseph:
-    build:
-      context: ./carltonjoseph
-      dockerfile: ${PWD}/carltonjoseph/Dockerfile.home
+    image: nginx
     ports:
       - "8104:80"
     volumes:
-      - /mnt/volume_sfo2_02/cj/carltonjoseph:/usr/share/nginx/html
+      - ${DATA_DIR}/carltonjoseph:/usr/share/nginx/html
   carltonwin8:
-    build:
-      context: ./carltonwin8
-      dockerfile: ${PWD}/carltonwin8/Dockerfile.home
+    image: nginx
     ports:
       - "8105:80"
     volumes:
-      - /mnt/volume_sfo2_02/cj/carltonwin8:/usr/share/nginx/html
+      - ${DATA_DIR}/carltonwin8:/usr/share/nginx/html
   tinaandcarlton:
-    build:
-      context: ./tinaandcarlton
-      dockerfile: ${PWD}/tinaandcarlton/Dockerfile.home
+    image: nginx
     ports:
       - "8106:80"
     volumes:
-      - /mnt/volume_sfo2_02/cj/tinaandcarlton:/usr/share/nginx/html
+      - ${DATA_DIR}/tinaandcarlton:/usr/share/nginx/html

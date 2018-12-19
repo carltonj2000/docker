@@ -4,12 +4,12 @@ The diagram of the setup can be found
 [here](https://docs.google.com/drawings/d/13VyCrZbnPymv7wfnjO2jlD06-W2CV74MiILdoC--vvk/edit?usp=sharing).
 
 This repository along with the
-[cj](https://github.com/carltonj2000/docker)
+[cj](https://github.com/carltonj2000/cj)
 repository froms docker machine test setup.
 
 Read the [digital ocean issues](#-Digital-Ocean-Issues) section for issues seen.
 
-# Commands
+## Commands
 
 The commands below should be in the makefile if it has been update.
 In an ideal world `make bup` should build all the docker sites and bring up
@@ -17,8 +17,9 @@ the docker machines.
 
 docker-compose -f docker-compose-home.yml build
 docker-compose -f docker-compose-home.yml up
+docker-compose -f docker-compose-home.yml restart <machine>
 
-# Home https
+## Home https
 
 The instruction below were adapted from the
 [HTTPS on localhost with NGINX](https://imagineer.in/blog/https-on-localhost-with-nginx/)
@@ -49,7 +50,7 @@ Email Address []:carlton.joseph@gmail.com
   `secutity delete-certificate -Z hash /Library/Keychains/System.keychain`
 - removed via GUI by `Finder->Go.Menu->Utilities->Keychain Access->System->Certificates`
 
-# Hosts
+## Hosts
 
 Added the following to `/etc/hosts`.
 
@@ -61,7 +62,7 @@ Added the following to `/etc/hosts`.
 127.0.0.1       tinandcarlton.dev
 ```
 
-# Digital Ocean Issues
+## Digital Ocean Issuesß
 
 The following issue was seen on Ubuntu 16.04 and Docker x.x but I did not
 check to see if this issue existed on 18.04.1 and Docker y.y.
@@ -79,3 +80,19 @@ mounted drive vs the host non mounted drive. With this setup there was no issue
 on auto starting the container on the system boot. The same setup will be
 duplicated on my local machine in order to have a consistent set up between my
 local and hosted machines.
+
+## Working Sites
+
+### At home
+
+    - carltonjoseph
+    - carltonwin8
+    - carltonathome
+
+## To Do
+
+### At home
+
+    - apps4tracking
+      appsfortracking - need to setup node with express server
+    - tinaandcarlton - default directory redirect and and rebuild apps for

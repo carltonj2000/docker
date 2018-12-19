@@ -1,0 +1,22 @@
+{
+  "name": "docker",
+  "version": "1.0.0",
+  "description": "Digitalocean docker setup",
+  "main": "index.js",
+  "scripts": {
+    "build-home1": "DATA_DIR=/mnt/volume_sfo2_02/cj make bup-home",
+    "build-home2": "DATA_DIR=/Volumes/cjs/cj/volume_sfo2_02/cj make bup-home",
+    "build-do": "DATA_DIR=/mnt/volume_sfo2_02/cj make bup-home"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carltonj2000/docker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carltonj2000/docker/issues"
+  },
+  "homepage": "https://github.com/carltonj2000/docker#readme"
+}
