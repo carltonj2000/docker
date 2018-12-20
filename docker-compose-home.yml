@@ -18,7 +18,8 @@ services:
       NODE_ENV: development
     volumes:
       - ${DATA_DIR}/apps4tracking:/home/node/app
-    command: "sh -c 'cd server && npm install && cd .. && npm run server'"
+      # need to figure out why the command below does not work by running it locally
+      #    command: "sh -c 'cd server && npm install && cd .. && npm run server'"
   carltonathome:
     image: php:7.2.1-apache
     ports:
