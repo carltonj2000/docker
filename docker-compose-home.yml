@@ -1,25 +1,25 @@
 version: "3"
 services:
   home-root:
-    build:
-      context: .
-      dockerfile: ./Dockerfile.home
+    image: nginx
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ${PWD}/nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ${PWD}/certs:/etc/ssl
       - ${DATA_DIR}/home-root:/usr/share/nginx/html
-  apps4tracking:
-    image: "node:10.14.2"
-    ports:
-      - "8101:5000"
-    working_dir: /home/node/app
-    environment:
-      NODE_ENV: development
-    volumes:
-      - ${DATA_DIR}/apps4tracking:/home/node/app
-      # need to figure out why the command below does not work by running it locally
-      #    command: "sh -c 'cd server && npm install && cd .. && npm run server'"
+  #  apps4tracking:
+  #    image: "node:10.14.2"
+  #    ports:
+  #      - "8101:5000"
+  #    working_dir: /home/node/app
+  #    environment:
+  #      NODE_ENV: development
+  #    volumes:
+  #      - ${DATA_DIR}/apps4tracking:/home/node/app
+  # need to figure out why the command below does not work
+  #command: "sh -c 'cd .. && npm run server'"
   carltonathome:
     image: php:7.2.1-apache
     ports:

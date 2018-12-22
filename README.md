@@ -26,7 +26,7 @@ The instruction below were adapted from the
 article.
 
 - generate and SSL self signed certificate with the following command.
-  `openssl req -x509 -sha256 -nodes -newkey rsa:2048 -days 365 -keyout localhost.key -out localhost.crt`
+  `openssl req -x509 -sha256 -nodes -newkey rsa:2048 -days 365 -keyout homehome.key -out homehome.crt`
 - enter the following information at the prompts
 
 ```

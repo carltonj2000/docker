@@ -13,3 +13,15 @@ up-do:
 	docker-compose -f docker-compose-do.yml up
 
 bup-do: build-do up-do
+
+build-home-apps:
+	docker-compose -f docker-compose-home.yml build apps4tracking
+
+up-home-apps:
+	docker-compose -f docker-compose-home.yml up apps4tracking
+
+bup-home-apps: build-home-apps up-home-apps
+
+down-home-apps:
+	docker-compose down apps4tracking
+
