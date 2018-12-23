@@ -6,7 +6,8 @@
   "scripts": {
     "bup-home1": "DATA_DIR=/mnt/volume_sfo2_02/cj make bup-home",
     "bup-home2": "DATA_DIR=/Volumes/cjs/cj/volume_sfo2_02/cj make bup-home",
-    "bup-do": "DATA_DIR=/mnt/volume_sfo2_02/cj make bup-home",
+    "bup-do": "DATA_DIR=/mnt/volume_sfo2_02/cj make bup-do",
+    "down-do": "DATA_DIR=/mnt/volume_sfo2_02/cj make down-do",
     "bup-home2-apps": "DATA_DIR=/Volumes/cjs/cj/volume_sfo2_02/cj make bup-home-apps",
     "up-home2-apps": "DATA_DIR=/Volumes/cjs/cj/volume_sfo2_02/cj make up-home-apps",
     "down-home2-apps": "DATA_DIR=/Volumes/cjs/cj/volume_sfo2_02/cj make down-home-apps"

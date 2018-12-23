@@ -6,6 +6,9 @@ up-home:
 
 bup-home: build-home up-home
 
+down-home:
+	docker-compose -f docker-compose-home.yml down
+
 build-do:
 	docker-compose -f docker-compose-do.yml build
 
