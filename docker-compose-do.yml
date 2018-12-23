@@ -1,0 +1,23 @@
+version: "3"
+services:
+  home-root:
+    image: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ${PWD}/nginx-do.conf:/etc/nginx/conf.d/nginx.conf
+      - ${PWD}/certs:/etc/ssl
+      - ${DATA_DIR}/home-root:/usr/share/nginx/html
+  carltonathome:
+    image: php:7.2.1-apache
+    ports:
+      - "8103:80"
+    volumes:
+      - ${DATA_DIR}/carltonathome:/var/www/html
+  carltonwin8:
+    image: nginx
+    ports:
+      - "8105:80"
+    volumes:
+      - ${DATA_DIR}/carltonwin8:/usr/share/nginx/html

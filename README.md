@@ -19,6 +19,30 @@ docker-compose -f docker-compose-home.yml build
 docker-compose -f docker-compose-home.yml up
 docker-compose -f docker-compose-home.yml restart <machine>
 
+## Digitalocean Let's Encrypt Certificates
+
+Instructions below are from
+[here]()
+and
+[here](https://certbot-dns-digitalocean.readthedocs.io/en/stable/).
+
+```
+certbot certonly \
+  --dns-digitalocean \
+  --dns-digitalocean-credentials ~/.secrets/certbot/digitalocean.ini \
+  -d example.com
+```
+
+Where the `digitalocean.ini` file contains an api key from DO as shown below.
+
+```
+# DigitalOcean API credentials used by Certbot
+dns_digitalocean_token = 0000111122223333444455556666777788889999aaaabbbbccccddddeeeeffff
+```
+
+DigitalOcean API credentials are obtained from your DigitalOcean account’s
+Applications & API Tokens page
+
 ## Home https
 
 The instruction below were adapted from the
@@ -62,7 +86,7 @@ Added the following to `/etc/hosts`.
 127.0.0.1       tinandcarlton.dev
 ```
 
-## Digital Ocean Issuesß
+## Digital Ocean Issues
 
 The following issue was seen on Ubuntu 16.04 and Docker x.x but I did not
 check to see if this issue existed on 18.04.1 and Docker y.y.
