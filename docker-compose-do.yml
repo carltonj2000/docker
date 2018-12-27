@@ -32,3 +32,14 @@ services:
     volumes:
       - ${DATA_DIR}/tinaandcarlton:/usr/share/nginx/html
     restart: always
+  appsfortracking:
+    image: "node:10.15.0"
+    ports:
+      - "8101:3000"
+    working_dir: /home/node/app
+    environment:
+      NODE_ENV: development
+    volumes:
+      - ${DATA_DIR}/appsfortracking:/home/node/app
+    command: "npm start"
+    restart: always

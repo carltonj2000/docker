@@ -43,6 +43,14 @@ cert-carltonathome:
 cert-tinaandcarlton:
 	certbot certonly --standalone --config-dir ./cert --work-dir ./cert --logs-dir ./cert -d tinaandcarlton.com
 
+.PHONY: cert-appsfortracking
+cert-appsfortracking:
+	certbot certonly --standalone --config-dir ./cert --work-dir ./cert --logs-dir ./cert -d appsfortracking.com
+
+.PHONY: cert-apps4tracking
+cert-apps4tracking:
+	certbot certonly --standalone --config-dir ./cert --work-dir ./cert --logs-dir ./cert -d apps4tracking.com
+
 .PHONY: cert-renew
 cert-renew:
 	certbot renew --standalone --config-dir ./cert --work-dir ./cert --logs-dir ./cert
