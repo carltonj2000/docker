@@ -9,6 +9,7 @@ services:
       - ${PWD}/nginx-do.conf:/etc/nginx/conf.d/nginx.conf
       - ${DATA_DIR}/home-root:/usr/share/nginx/html
       - ${PWD}/cert/archive:/etc/ssl
+    restart: always
   carltonathome:
     image: php:7.2.1-apache
     ports:
@@ -16,9 +17,11 @@ services:
     volumes:
       - ${DATA_DIR}/carltonathome:/var/www/html
     domainname: carltonathome.com
+    restart: always
   carltonwin8:
     image: nginx
     ports:
       - "8105:80"
     volumes:
       - ${DATA_DIR}/carltonwin8:/usr/share/nginx/html
+    restart: always
