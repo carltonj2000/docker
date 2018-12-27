@@ -17,6 +17,9 @@ up-do:
 
 bup-do: build-do up-do
 
+down-do:
+	docker-compose -f docker-compose-do.yml down
+
 build-home-apps:
 	docker-compose -f docker-compose-home.yml build apps4tracking
 
@@ -27,4 +30,8 @@ bup-home-apps: build-home-apps up-home-apps
 
 down-home-apps:
 	docker-compose down apps4tracking
+
+.PHONY: cert
+cert:
+	certbot certonly --standalone --config-dir ./cert --work-dir ./cert --logs-dir ./cert -d carltonwin8.com
 

@@ -7,14 +7,15 @@ services:
       - "443:443"
     volumes:
       - ${PWD}/nginx-do.conf:/etc/nginx/conf.d/nginx.conf
-      - ${PWD}/certs:/etc/ssl
       - ${DATA_DIR}/home-root:/usr/share/nginx/html
+      - ${PWD}/cert/archive/carltonwin8.com:/etc/ssl
   carltonathome:
     image: php:7.2.1-apache
     ports:
       - "8103:80"
     volumes:
       - ${DATA_DIR}/carltonathome:/var/www/html
+    domainname: carltonathome.com
   carltonwin8:
     image: nginx
     ports:
