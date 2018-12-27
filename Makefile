@@ -39,3 +39,10 @@ cert-carlotnwin8:
 cert-carltonathome:
 	certbot certonly --standalone --config-dir ./cert --work-dir ./cert --logs-dir ./cert -d carltonathome.com
 
+.PHONY: cert-tinaandcarlton
+cert-tinaandcarlton:
+	certbot certonly --standalone --config-dir ./cert --work-dir ./cert --logs-dir ./cert -d tinaandcarlton.com
+
+.PHONY: cert-renew
+cert-renew:
+	certbot renew --standalone --config-dir ./cert --work-dir ./cert --logs-dir ./cert

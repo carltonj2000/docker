@@ -25,3 +25,10 @@ services:
     volumes:
       - ${DATA_DIR}/carltonwin8:/usr/share/nginx/html
     restart: always
+  tinaandcarlton:
+    image: nginx
+    ports:
+      - "8106:80"
+    volumes:
+      - ${DATA_DIR}/tinaandcarlton:/usr/share/nginx/html
+    restart: always
