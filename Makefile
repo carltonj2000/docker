@@ -31,6 +31,9 @@ bup-home-apps: build-home-apps up-home-apps
 down-home-apps:
 	docker-compose down apps4tracking
 
+restart-do-apps:
+	docker restart docker_appsfortracking_1
+
 .PHONY: cert-carltonwin8
 cert-carlotnwin8:
 	certbot certonly --standalone --config-dir ./cert --work-dir ./cert --logs-dir ./cert -d carltonwin8.com

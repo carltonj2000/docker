@@ -35,11 +35,11 @@ services:
   appsfortracking:
     image: "node:10.15.0"
     ports:
-      - "8101:3000"
+      - "8101:5000"
     working_dir: /home/node/app
     environment:
       NODE_ENV: development
     volumes:
-      - ${DATA_DIR}/appsfortracking:/home/node/app
+      - ${DATA_DIR}/apps4tracking:/home/node/app
     command: "npm start"
     restart: always
