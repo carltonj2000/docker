@@ -54,6 +54,10 @@ cert-appsfortracking:
 cert-apps4tracking:
 	certbot certonly --standalone --config-dir ./cert --work-dir ./cert --logs-dir ./cert -d apps4tracking.com
 
+.PHONY: cert-carltonjoseph
+cert-carltonjoseph:
+	certbot certonly --standalone --config-dir ./cert --work-dir ./cert --logs-dir ./cert -d carltonjoseph.com
+
 .PHONY: cert-renew
 cert-renew:
 	certbot renew --standalone --config-dir ./cert --work-dir ./cert --logs-dir ./cert

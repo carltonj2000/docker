@@ -43,3 +43,11 @@ services:
       - ${DATA_DIR}/apps4tracking:/home/node/app
     command: "npm start"
     restart: always
+  carltonjoseph:
+    image: nginx
+    ports:
+      - "8104:80"
+    volumes:
+      - ${DATA_DIR}/carltonjoseph:/usr/share/nginx/html
+    restart: always
+ 
