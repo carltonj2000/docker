@@ -9,6 +9,8 @@ repository froms docker machine test setup.
 
 Read the [digital ocean issues](#-Digital-Ocean-Issues) section for issues seen.
 
+Read my google docs on how to renew certificates.
+
 ## Commands
 
 The commands below should be in the makefile if it has been update.

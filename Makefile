@@ -1,3 +1,6 @@
+config-home:
+	docker-compose -f docker-compose-home.yml config
+
 build-home:
 	docker-compose -f docker-compose-home.yml build
 
@@ -9,9 +12,14 @@ bup-home: build-home up-home
 down-home:
 	docker-compose -f docker-compose-home.yml down
 
+config-do: export DATA_DIR=/mnt/volume_sfo2_02/cj
+config-do: 
+	docker-compose -f docker-compose-do.yml config
+
 build-do:
 	docker-compose -f docker-compose-do.yml build
 
+up-do: export DATA_DIR=/mnt/volume_sfo2_02/cj
 up-do:
 	docker-compose -f docker-compose-do.yml up
 
