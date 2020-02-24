@@ -42,6 +42,10 @@ down-home-apps:
 restart-do-apps:
 	docker restart docker_appsfortracking_1
 
+.PHONY: cert-sophieandchampagne.com
+cert-sophieandchampagne:
+	certbot certonly --standalone --config-dir ./cert --work-dir ./cert --logs-dir ./cert -d sophieandchampagne.com
+
 .PHONY: cert-carltonwin8
 cert-carlotnwin8:
 	certbot certonly --standalone --config-dir ./cert --work-dir ./cert --logs-dir ./cert -d carltonwin8.com

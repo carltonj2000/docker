@@ -50,4 +50,11 @@ services:
     volumes:
       - ${DATA_DIR}/carltonjoseph:/usr/share/nginx/html
     restart: always
+  sophieandchampagne:
+    image: nginx
+    ports:
+      - "8107:80"
+    volumes:
+      - ${DATA_DIR}/sophieandchampagne:/usr/share/nginx/html
+    restart: always
  
