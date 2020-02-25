@@ -25,6 +25,7 @@ up-do:
 
 bup-do: build-do up-do
 
+down-do: export DATA_DIR=/mnt/volume_sfo2_02/cj
 down-do:
 	docker-compose -f docker-compose-do.yml down
 
