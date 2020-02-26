@@ -4,6 +4,8 @@
   "description": "Digitalocean docker setup",
   "main": "index.js",
   "scripts": {
+    "do2home": "ts-node-dev --no-notify --clear ./src/do2home.ts",
+    "do2home:dev": "ts-node-dev --respawn --no-notify --clear ./src/do2home.ts",
     "bup-home1": "DATA_DIR=/mnt/volume_sfo2_02/cj make bup-home",
     "bup-home2": "DATA_DIR=/Volumes/cjs/cj/volume_sfo2_02/cj make bup-home",
     "bup-do": "DATA_DIR=/mnt/volume_sfo2_02/cj make bup-do",
@@ -23,5 +25,10 @@
   "bugs": {
     "url": "https://github.com/carltonj2000/docker/issues"
   },
-  "homepage": "https://github.com/carltonj2000/docker#readme"
+  "homepage": "https://github.com/carltonj2000/docker#readme",
+  "devDependencies": {
+    "@types/node": "^13.7.6",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.8.2"
+  }
 }

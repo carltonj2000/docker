@@ -81,11 +81,11 @@ Email Address []:carlton.joseph@gmail.com
 Added the following to `/etc/hosts`.
 
 ```
-127.0.0.1       carltonjoseph.dev
-127.0.0.1       carltonathome.dev
-127.0.0.1       appsfortracking.dev
-127.0.0.1       carltonwin8.dev
-127.0.0.1       tinandcarlton.dev
+127.0.0.1       carltonjoseph.local
+127.0.0.1       carltonathome.local
+127.0.0.1       appsfortracking.local
+127.0.0.1       carltonwin8.local
+127.0.0.1       tinandcarlton.local
 ```
 
 ## Digital Ocean Issues

@@ -4,11 +4,13 @@ config-home:
 build-home:
 	docker-compose -f docker-compose-home.yml build
 
+up-home: export DATA_DIR=/Users/carltonjoseph/cj/cj2020/websites
 up-home:
 	docker-compose -f docker-compose-home.yml up
 
 bup-home: build-home up-home
 
+down-home: export DATA_DIR=/Users/carltonjoseph/cj/cj2020/websites
 down-home:
 	docker-compose -f docker-compose-home.yml down
 

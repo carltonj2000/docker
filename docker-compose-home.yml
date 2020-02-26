@@ -4,34 +4,16 @@ services:
     image: nginx
     ports:
       - "80:80"
-      - "443:443"
     volumes:
-      - ${PWD}/nginx.conf:/etc/nginx/conf.d/nginx.conf
-      - ${PWD}/certs:/etc/ssl
+      - ${PWD}/nginx-home.conf:/etc/nginx/conf.d/nginx.conf
       - ${DATA_DIR}/home-root:/usr/share/nginx/html
-  #  apps4tracking:
-  #    image: "node:10.14.2"
-  #    ports:
-  #      - "8101:5000"
-  #    working_dir: /home/node/app
-  #    environment:
-  #      NODE_ENV: development
-  #    volumes:
-  #      - ${DATA_DIR}/apps4tracking:/home/node/app
-  # need to figure out why the command below does not work
-  #command: "sh -c 'cd .. && npm run server'"
   carltonathome:
     image: php:7.2.1-apache
     ports:
       - "8103:80"
     volumes:
       - ${DATA_DIR}/carltonathome:/var/www/html
-  carltonjoseph:
-    image: nginx
-    ports:
-      - "8104:80"
-    volumes:
-      - ${DATA_DIR}/carltonjoseph:/usr/share/nginx/html
+    domainname: carltonathome.com
   carltonwin8:
     image: nginx
     ports:
@@ -44,3 +26,26 @@ services:
       - "8106:80"
     volumes:
       - ${DATA_DIR}/tinaandcarlton:/usr/share/nginx/html
+  appsfortracking:
+    image: "node:10.15.0"
+    ports:
+      - "8101:5000"
+    working_dir: /home/node/app
+    environment:
+      NODE_ENV: development
+    volumes:
+      - ${DATA_DIR}/apps4tracking:/home/node/app
+    command: "npm start"
+  carltonjoseph:
+    image: nginx
+    ports:
+      - "8104:80"
+    volumes:
+      - ${DATA_DIR}/carltonjoseph:/usr/share/nginx/html
+  sophieandchampagne:
+    image: nginx
+    ports:
+      - "8107:80"
+    volumes:
+      - ${DATA_DIR}/sophieandchampagne:/usr/share/nginx/html
+ 
