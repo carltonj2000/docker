@@ -6,7 +6,8 @@ services:
       - "80:80"
     volumes:
       - ${PWD}/nginx-home.conf:/etc/nginx/conf.d/nginx.conf
-      - ${DATA_DIR}/home-root:/usr/share/nginx/html
+      - ${DATA_DIR}/home-root/web:/usr/share/nginx/html
+      - ${DATA_DIR}:/www
   carltonathome:
     image: php:7.2.1-apache
     ports:
@@ -14,18 +15,6 @@ services:
     volumes:
       - ${DATA_DIR}/carltonathome:/var/www/html
     domainname: carltonathome.com
-  carltonwin8:
-    image: nginx
-    ports:
-      - "8105:80"
-    volumes:
-      - ${DATA_DIR}/carltonwin8:/usr/share/nginx/html
-  tinaandcarlton:
-    image: nginx
-    ports:
-      - "8106:80"
-    volumes:
-      - ${DATA_DIR}/tinaandcarlton:/usr/share/nginx/html
   appsfortracking:
     image: "node"
     ports:
@@ -34,17 +23,15 @@ services:
     environment:
       NODE_ENV: development
     volumes:
-      - ${DATA_DIR}/apps4tracking:/home/node/app
+      - ${DATA_DIR}/apps4tracking/api:/home/node/app
     command: "npm start"
-  carltonjoseph:
-    image: nginx
-    ports:
-      - "8104:80"
-    volumes:
-      - ${DATA_DIR}/carltonjoseph:/usr/share/nginx/html
   sophieandchampagne:
-    image: nginx
+    image: node
     ports:
       - "8107:80"
     volumes:
-      - ${DATA_DIR}/sophieandchampagne:/usr/share/nginx/html
+      - ${DATA_DIR}/sophieandchampagne/api:/home/node/app
+    working_dir: /home/node/app
+    environment:
+      NODE_ENV: development
+    command: "npm start"
