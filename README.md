@@ -78,14 +78,26 @@ Email Address []:carlton.joseph@gmail.com
 
 ## Hosts
 
-Added the following to `/etc/hosts`.
+Added the following to `/etc/hosts`. Need the `::1` IPv6 duplicated on MAC
+so that the name lookup is fast.
 
 ```
-127.0.0.1       carltonjoseph.local
 127.0.0.1       carltonathome.local
-127.0.0.1       appsfortracking.local
 127.0.0.1       carltonwin8.local
-127.0.0.1       tinandcarlton.local
+127.0.0.1       tinaandcarlton.local
+127.0.0.1       appsfortracking.local
+127.0.0.1       apps4tracking.local
+127.0.0.1       carltonjoseph.local
+127.0.0.1       sophieandchampagne.local
+127.0.0.1       home-root.local
+::1     carltonathome.local
+::1     carltonwin8.local
+::1     tinaandcarlton.local
+::1     appsfortracking.local
+::1     apps4tracking.local
+::1     carltonjoseph.local
+::1     sophieandchampagne.local
+::1     home-root.local
 ```
 
 ## Digital Ocean Issues
