@@ -27,7 +27,7 @@ services:
     volumes:
       - ${DATA_DIR}/tinaandcarlton:/usr/share/nginx/html
   appsfortracking:
-    image: "node:10.15.0"
+    image: "node"
     ports:
       - "8101:5000"
     working_dir: /home/node/app
@@ -48,4 +48,3 @@ services:
       - "8107:80"
     volumes:
       - ${DATA_DIR}/sophieandchampagne:/usr/share/nginx/html
- 
