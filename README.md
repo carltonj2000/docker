@@ -79,7 +79,8 @@ Email Address []:carlton.joseph@gmail.com
 ## Hosts
 
 Added the following to `/etc/hosts`. Need the `::1` IPv6 duplicated on MAC
-so that the name lookup is fast.
+so that the name lookup is fast, without it Bounjour get take 5+ seconds
+before the lookup completes.
 
 ```
 127.0.0.1       carltonathome.local
