@@ -9,6 +9,7 @@ services:
       - ${PWD}/nginx-do.conf:/etc/nginx/conf.d/nginx.conf
       - ${DATA_DIR}/home-root:/usr/share/nginx/html
       - ${PWD}/cert/archive:/etc/ssl
+      - ${DATA_DIR}:/www
     restart: always
   carltonathome:
     image: php:7.2.1-apache
@@ -18,43 +19,21 @@ services:
       - ${DATA_DIR}/carltonathome:/var/www/html
     domainname: carltonathome.com
     restart: always
-  carltonwin8:
-    image: nginx
-    ports:
-      - "8105:80"
-    volumes:
-      - ${DATA_DIR}/carltonwin8:/usr/share/nginx/html
-    restart: always
-  tinaandcarlton:
-    image: nginx
-    ports:
-      - "8106:80"
-    volumes:
-      - ${DATA_DIR}/tinaandcarlton:/usr/share/nginx/html
-    restart: always
   appsfortracking:
-    image: "node:10.15.0"
+    image: "node"
     ports:
       - "8101:5000"
     working_dir: /home/node/app
     environment:
       NODE_ENV: development
     volumes:
-      - ${DATA_DIR}/apps4tracking:/home/node/app
+      - ${DATA_DIR}/apps4tracking/api:/home/node/app
     command: "npm start"
     restart: always
-  carltonjoseph:
-    image: nginx
-    ports:
-      - "8104:80"
-    volumes:
-      - ${DATA_DIR}/carltonjoseph:/usr/share/nginx/html
-    restart: always
   sophieandchampagne:
-    image: nginx
+    image: node
     ports:
       - "8107:80"
     volumes:
-      - ${DATA_DIR}/sophieandchampagne:/usr/share/nginx/html
+      - ${DATA_DIR}/sophieandchampagne/api:/home/node/app
     restart: always
- 
