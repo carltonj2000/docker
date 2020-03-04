@@ -36,4 +36,8 @@ services:
       - "8107:80"
     volumes:
       - ${DATA_DIR}/sophieandchampagne/api:/home/node/app
+    working_dir: /home/node/app
+    environment:
+      NODE_ENV: development
+    command: "npm start"
     restart: always
