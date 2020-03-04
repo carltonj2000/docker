@@ -7,12 +7,24 @@ const sites = [
   "appsfortracking",
   "apps4tracking",
   "carltonjoseph",
-  "sophieandchampagne",
-  "home-root"
+  "sophieandchampagne"
 ];
-// need to implement the following
-//  http://stackoverflow.com http://wikipedia.org
+
+const siteCfg = {
+  local: { transport: "http" },
+  com: { transport: "https" }
+};
+
+const useLocal = false;
+const baseUrl = useLocal ? "local" : "com";
+const { transport } = siteCfg[baseUrl];
 
 (async () => {
-  sites.map(site => exec(`open -a "Google Chrome" http://${site}.local`));
+  const cmd = site =>
+    `open -a "Google Chrome" ${transport}://${site}.${baseUrl}`;
+  sites.map(site => {
+    const c = cmd(site);
+    console.log(c);
+    exec(c);
+  });
 })().catch(e => console.log(e));

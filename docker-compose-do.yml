@@ -16,7 +16,7 @@ services:
     ports:
       - "8103:80"
     volumes:
-      - ${DATA_DIR}/carltonathome:/var/www/html
+      - ${DATA_DIR}/carltonathome/web:/var/www/html
     domainname: carltonathome.com
     restart: always
   appsfortracking:
