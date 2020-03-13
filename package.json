@@ -6,6 +6,7 @@
   "scripts": {
     "do2home": "ts-node-dev --no-notify --clear ./src/do2home.ts",
     "do2home:dev": "ts-node-dev --respawn --no-notify --clear ./src/do2home.ts",
+    "redirect": "ts-node-dev --no-notify --clear ./src/redirect.ts",
     "do2home:build": "tsc",
     "openwww": "ts-node-dev --no-notify --clear ./src/openwww.ts",
     "postbuild": "cp -R node_modules dst/node_modules",
