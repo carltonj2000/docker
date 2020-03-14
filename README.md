@@ -11,6 +11,33 @@ Read the [digital ocean issues](#-Digital-Ocean-Issues) section for issues seen.
 
 Read my google docs on how to renew certificates.
 
+## Nginx Auth
+
+
+The auth is from
+[here](https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04).
+
+```bash
+echo -n 'carltonj2000:' >> .htpasswd
+openssl passwd -apr1 >> .htpasswd
+chmod 600 .htpasswd
+```
+
+And the corresponding entry in nginx.conf
+
+```
+server { 
+    root /www/carltonjoseph/;
+    ...
+    location /test {
+        try_files $uri $uri/ =404;
+        auth_basic "Restricted Content";
+        auth_basic_user_file /www/carltonjoseph/test/.htpasswd;
+    }
+    ...
+}
+```
+
 ## Nginx Forwarding
 
 The summary below is from
