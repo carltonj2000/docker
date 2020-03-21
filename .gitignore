@@ -3,4 +3,5 @@ node_modules/
 certs/
 cert/
 dst/
+htpasswd/
 

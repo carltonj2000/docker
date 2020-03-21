@@ -10,6 +10,7 @@ services:
       - ${DATA_DIR}/home-root:/usr/share/nginx/html
       - ${PWD}/cert/archive:/etc/ssl
       - ${DATA_DIR}:/www
+      - ${PWD}/htpasswd:/htpasswd
     restart: always
   carltonathome:
     image: php:7.2.1-apache
